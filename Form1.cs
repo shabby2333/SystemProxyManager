@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
@@ -40,6 +41,7 @@ namespace SystemProxyManager
         public void CheckProxyOpened()
         {
             btnStatus.Checked = Convert.ToInt32(registry.GetValue("ProxyEnable")) == 1;
+            notifyIcon1.Icon = btnStatus.Checked? Properties.Resources.on: Properties.Resources.off;
             tbProxyAddress.Text = Convert.ToString(registry.GetValue("ProxyServer"));
             btnAutoStart.Checked = autoStart.GetAutoStart();
         }
@@ -48,6 +50,7 @@ namespace SystemProxyManager
         {
             btnStatus.Checked = !btnStatus.Checked;
             ChangeProxyOpen(btnStatus.Checked);
+            notifyIcon1.Icon = btnStatus.Checked ? Properties.Resources.on : Properties.Resources.off;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

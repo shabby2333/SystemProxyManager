@@ -29,22 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.tbProxyAddress = new System.Windows.Forms.ToolStripTextBox();
-            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAutoStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "系统代理助手";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.btnStatus_Click);
             // 
             // contextMenuStrip1
             // 
@@ -54,7 +53,7 @@
             this.btnAutoStart,
             this.btnExit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(221, 117);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(221, 95);
             // 
             // btnStatus
             // 
@@ -69,19 +68,19 @@
             this.tbProxyAddress.Name = "tbProxyAddress";
             this.tbProxyAddress.Size = new System.Drawing.Size(160, 23);
             // 
-            // btnExit
-            // 
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(220, 22);
-            this.btnExit.Text = "退出";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // btnAutoStart
             // 
             this.btnAutoStart.Name = "btnAutoStart";
             this.btnAutoStart.Size = new System.Drawing.Size(220, 22);
             this.btnAutoStart.Text = "开机启动";
             this.btnAutoStart.Click += new System.EventHandler(this.btnAutoStart_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(220, 22);
+            this.btnExit.Text = "退出";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Form1
             // 
